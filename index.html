@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punam Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/094dad0ae2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- ----------------------Home-------------- -->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.jpg" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header_text">
+                <p>Software Engineer</p>
+                <h1>Hi, I'm <span>Punam</span><br>from India</h1>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------------About-------------------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about_col_1">
+                    <img src="images/user.jpg">
+                </div>
+                <div class="about_col_2">
+                    <h1 class="subtitle">About Me</h1>
+                    <p>Hi, I'm Punam, a passionate and driven Computer Science Engineer specializing in Artificial Intelligence. I have hands-on experience in Python, Java, SQL, and frameworks like TensorFlow, and React. My expertise spans across web development, machine learning, and data analysis, and I love building innovative solutions to real-world problems.</p>
+                    <div class="tab_titles">
+                        <p class="tab_links active_link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab_links" onclick="opentab('education')">Education</p>
+                        <p class="tab_links" onclick="opentab('certificate')">Certificate</p>
+                    </div>
+                    <div class="tab_contents active_tab" id="skills">
+                        <ul>
+                            <li><b>Languages</b><br>Python, Java, SQL</li>
+                            <li><b>Web Development</b><br>HTML, CSS, JavaScript, React</li> 
+                            <li><b>Framework/Libraries</b><br>Bootstrap, Tailwind CSS, Numpy, Scikit-Learn, Pandas</li> 
+                            <li><b>Database</b><br>MySQL, MongoDB, PostgreSQL</li>
+                        </ul>
+                    </div>
+                    <div class="tab_contents" id="education">
+                        <ul>
+                            <li><b>B. Tech in Computer Science Engineering (Specialization in AI) 2021 - 2025</b><br>Noida Institute of Engineering and Technology, Gr. Noida, Uttar Pradesh <br>Percentage: 81%</li>
+                            <li><b>CBSE, Class XII 2020 - 2021</b><br>Kendriya Vidyalaya, Delhi NCR <br>Percentage: 81%</li>
+                            <li><b>CBSE, Class X 2018 - 2019</b><br>Kendriya Vidayalaya, Delhi NCR <br>Percentage: 71%</li>
+                        </ul>
+                    </div>
+                    <div class="tab_contents" id="certificate">
+                        <ul>
+                            <li onclick="openPdf('Images/Python for Data Science, AI & Development.pdf')"><b>Python for Data Science, AI & Development</b></li> 
+                            <li onclick="openPdf('Images/Spring Boot and React Stack-DevOps Tools and Capstone Project.pdf')"><b>Spring Boot and React Stack-DevOps Tools and Capstone Project</b></li>
+                            <li onclick="openPdf('Images/Machine Learning with Python.pdf')" ><b>Machine Learning with Python</b></li>
+                            <li onclick="openPdf('Images/Machine Learning for All.pdf')"><b>Machine Learning for All</b></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- -----------------contact----------------- -->
+     <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact_left">
+                    <h1 class="sub_title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>soonamkumari109@gmail.com</p>
+                    <p><i class="fa-solid fa-square-phone"></i>+91 7982229524</p>
+                    <div class="social_icons">
+                        <a href=""><i class="fa-brands fa-square-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                        <a href=""><i class="fa-brands fa-twitter-square"></i></a>
+                    </div>
+                    <a href="images/Punam_Resume.pdf" download class="btn btn2">Download CV</a>
+                </div>
+                <div class="contact_right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © Punam made with <i class="fa-solid fa-heart"></i></p>
+        </div>
+     </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab_links");
+        var tabcontents = document.getElementsByClassName("tab_contents")
+
+        function opentab(tabname){
+            for (tablink of tablinks) {
+                tablink.classList.remove("active_link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active_tab");
+            }
+            event.currentTarget.classList.add("active_link");
+            document.getElementById(tabname).classList.add("active_tab");
+        }
+    </script>
+
+    <script>
+        var sidemenubar = document.getElementById("sidemenu");
+        function openmenu(){
+            sidemenubar.style.right = "0";
+        }
+        function closemenu(){
+            sidemenubar.style.right = "-200px";
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxKmnCmtI9XWDofRvIIttckjUfQd1g-On8aV2_OpYjJzZbefpvMhJYCI-7NgCDQu0bqJg/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully"
+                setTimeout(function(){
+                    msg.innerHTML= ""
+                }, 1000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+      <script>
+        function openPdf(pdfPath) {
+            window.open(pdfPath, '_blank');
+        }
+    </script>
+</body>
+</html>
